@@ -1,0 +1,18 @@
+@host = http://localhost:5006
+
+### 1. Login (seed admin from appsettings.Development.json) and copy the token
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "Admin123!"
+}
+
+### 2. Report 1 - tickets Excel (optional ?status=Abierto|EnProceso|Cerrado)
+GET {{host}}/api/reports/tickets
+Authorization: Bearer <paste-token-here>
+
+### 3. Report 2 - users Excel (Admin/Support only)
+GET {{host}}/api/reports/users
+Authorization: Bearer <paste-token-here>
