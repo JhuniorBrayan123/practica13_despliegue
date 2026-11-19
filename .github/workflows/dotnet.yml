@@ -1,0 +1,41 @@
+
+name: Build and Deploy .NET Application
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Compilar y publicar API
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restaurar dependencias
+        run: dotnet restore Lab13_JhuniorGutierrez.Api/Lab13_JhuniorGutierrez.Api.csproj
+
+      - name: Compilar aplicacion
+        run: dotnet build Lab13_JhuniorGutierrez.Api/Lab13_JhuniorGutierrez.Api.csproj --configuration Release --no-restore
+
+      - name: Publicar aplicacion
+        run: dotnet publish Lab13_JhuniorGutierrez.Api/Lab13_JhuniorGutierrez.Api.csproj --configuration Release --no-build --output ./published
+
+      - name: Guardar archivos publicados
+        uses: actions/upload-artifact@v4
+        with:
+          name: Lab13_JhuniorGutierrez_Publicado
+          path: ./published/
+          if-no-files-found: error
