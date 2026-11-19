@@ -26,7 +26,11 @@ if (app.Environment.IsProduction())
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
-if (app.Environment.IsDevelopment())
+var swaggerEnabled =
+    app.Environment.IsDevelopment() ||
+    app.Configuration.GetValue<bool>("Swagger:Enabled");
+
+if (swaggerEnabled)
 {
     app.UseSwagger();
 
@@ -38,6 +42,7 @@ if (app.Environment.IsDevelopment())
         );
     });
 }
+
 
 app.UseHttpsRedirection();
 
