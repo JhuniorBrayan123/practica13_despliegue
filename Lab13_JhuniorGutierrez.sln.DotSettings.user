@@ -1,4 +1,6 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
   &lt;Assembly Path="E:\01_Estudios\06_Sexto-Semestre\01_Materias\C#-ERP\Lab13_JhuniorGutierrez\Lab13_JhuniorGutierrez.ExcelExamples\bin\Debug\net10.0\ClosedXML.dll" /&gt;&#xD;
+  &lt;Assembly Path="E:\01_Estudios\06_Sexto-Semestre\01_Materias\C#-ERP\Lab13_JhuniorGutierrez\Lab13_JhuniorGutierrez.Api\bin\Release\net10.0\win-x64\publish\DocumentFormat.OpenXml.Framework.dll" /&gt;&#xD;
+  &lt;Assembly Path="E:\01_Estudios\06_Sexto-Semestre\01_Materias\C#-ERP\Lab13_JhuniorGutierrez\Lab13_JhuniorGutierrez.Api\bin\Release\net10.0\win-x64\publish\Lab13_JhuniorGutierrez.Api.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>

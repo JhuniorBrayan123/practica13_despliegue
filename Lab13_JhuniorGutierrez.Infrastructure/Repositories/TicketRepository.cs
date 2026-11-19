@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Lab13_JhuniorGutierrez.Infrastructure.Repositories;
 
-public class TicketRepository(Lab13_JhuniorGutierrezDbContext context) : GenericRepository<Ticket>(context), ITicketRepository
+public class TicketRepository(Lab13JhuniorGutierrezDbContext context) : GenericRepository<Ticket>(context), ITicketRepository
 {
     private IQueryable<Ticket> Filtered(TicketStatus? status) =>
         DbSet.Include(t => t.User)

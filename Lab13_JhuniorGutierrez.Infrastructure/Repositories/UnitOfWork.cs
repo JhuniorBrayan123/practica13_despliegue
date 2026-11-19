@@ -3,7 +3,7 @@ using Lab13_JhuniorGutierrez.Infrastructure.Data;
 
 namespace Lab13_JhuniorGutierrez.Infrastructure.Repositories;
 
-public class UnitOfWork(Lab13_JhuniorGutierrezDbContext context) : IUnitOfWork
+public class UnitOfWork(Lab13JhuniorGutierrezDbContext context) : IUnitOfWork
 {
     private IUserRepository? _users;
     private IRoleRepository? _roles;

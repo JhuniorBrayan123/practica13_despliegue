@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Lab13_JhuniorGutierrez.Infrastructure.Repositories;
 
-public class RoleRepository(Lab13_JhuniorGutierrezDbContext context) : GenericRepository<Role>(context), IRoleRepository
+public class RoleRepository(Lab13JhuniorGutierrezDbContext context) : GenericRepository<Role>(context), IRoleRepository
 {
     public Task<Role?> GetByNameAsync(string roleName) =>
         DbSet.FirstOrDefaultAsync(r => r.RoleName == roleName);

@@ -1,6 +1,5 @@
 using Lab13_JhuniorGutierrez.Api.Configuration;
 using Lab13_JhuniorGutierrez.Api.Middleware;
-using Lab13_JhuniorGutierrez.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,8 +7,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddApiServices(builder.Configuration);
 
 var app = builder.Build();
-
-await DbSeeder.SeedAsync(app.Services);
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 

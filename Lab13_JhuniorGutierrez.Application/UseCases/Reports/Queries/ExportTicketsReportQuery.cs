@@ -7,7 +7,7 @@ using Lab13_JhuniorGutierrez.Domain.Enums;
 namespace Lab13_JhuniorGutierrez.Application.UseCases.Reports.Queries;
 
 
-public class ExportTicketsReportUseCase(IUnitOfWork unitOfWork, IExcelReportGenerator excel)
+public class ExportTicketsReportQuery(IUnitOfWork unitOfWork, IExcelReportGenerator excel)
 {
     private static readonly string[] Headers =
         [ "Title", "Description", "Status", "Created by", "Created at", "Closed at"];

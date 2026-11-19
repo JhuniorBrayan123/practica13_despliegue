@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Lab13_JhuniorGutierrez.Infrastructure.Data;
 
-public partial class Lab13_JhuniorGutierrezDbContext : DbContext
+public partial class Lab13JhuniorGutierrezDbContext : DbContext
 {
-    public Lab13_JhuniorGutierrezDbContext(DbContextOptions<Lab13_JhuniorGutierrezDbContext> options)
+    public Lab13JhuniorGutierrezDbContext(DbContextOptions<Lab13JhuniorGutierrezDbContext> options)
         : base(options)
     {
     }

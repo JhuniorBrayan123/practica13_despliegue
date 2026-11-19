@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Lab13_JhuniorGutierrez.Infrastructure.Repositories;
 
-public class UserRoleRepository(Lab13_JhuniorGutierrezDbContext context) : GenericRepository<UserRole>(context), IUserRoleRepository
+public class UserRoleRepository(Lab13JhuniorGutierrezDbContext context) : GenericRepository<UserRole>(context), IUserRoleRepository
 {
     public async Task<IReadOnlyList<UserRole>> GetByUserAsync(Guid userId) =>
         await DbSet.Include(ur => ur.Role)

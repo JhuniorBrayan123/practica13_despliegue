@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Lab13_JhuniorGutierrez.Infrastructure.Repositories;
 
-public class UserRepository(Lab13_JhuniorGutierrezDbContext context) : GenericRepository<User>(context), IUserRepository
+public class UserRepository(Lab13JhuniorGutierrezDbContext context) : GenericRepository<User>(context), IUserRepository
 {
     private IQueryable<User> WithRoles() => DbSet.Include(u => u.UserRoles).ThenInclude(ur => ur.Role);
 

@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Lab13_JhuniorGutierrez.Infrastructure.Repositories;
 
-public class GenericRepository<T>(Lab13_JhuniorGutierrezDbContext context) : IGenericRepository<T> where T : class
+public class GenericRepository<T>(Lab13JhuniorGutierrezDbContext context) : IGenericRepository<T> where T : class
 {
-    protected readonly Lab13_JhuniorGutierrezDbContext Context = context;
+    protected readonly Lab13JhuniorGutierrezDbContext Context = context;
     protected readonly DbSet<T> DbSet = context.Set<T>();
 
     public async Task<T?> GetByIdAsync(params object[] keyValues) => await DbSet.FindAsync(keyValues);

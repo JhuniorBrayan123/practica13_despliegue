@@ -19,7 +19,7 @@ public static class InfrastructureServiceExtensions
             throw new InvalidOperationException(
                 "Connection string 'DefaultConnection' is not configured (use user-secrets or appsettings).");
 
-        services.AddDbContext<Lab13_JhuniorGutierrezDbContext>(options => options.UseNpgsql(connectionString));
+        services.AddDbContext<Lab13JhuniorGutierrezDbContext>(options => options.UseNpgsql(connectionString));
 
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));

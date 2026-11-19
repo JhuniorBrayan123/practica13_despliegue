@@ -4,7 +4,7 @@ using Lab13_JhuniorGutierrez.Application.Interfaces.Servicios;
 
 namespace Lab13_JhuniorGutierrez.Application.UseCases.Reports.Queries;
 
-public class ExportUsersReportUseCase(IUnitOfWork unitOfWork, IExcelReportGenerator excel)
+public class ExportUsersReportQuery(IUnitOfWork unitOfWork, IExcelReportGenerator excel)
 {
     private static readonly string[] Headers =
         [ "Username", "Email", "Roles", "Tickets opened", "Created at"];

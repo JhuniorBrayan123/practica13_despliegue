@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Lab13_JhuniorGutierrez.Infrastructure.Repositories;
 
-public class ResponseRepository(Lab13_JhuniorGutierrezDbContext context) : GenericRepository<Response>(context), IResponseRepository
+public class ResponseRepository(Lab13JhuniorGutierrezDbContext context) : GenericRepository<Response>(context), IResponseRepository
 {
     public async Task<IReadOnlyList<Response>> GetByTicketAsync(Guid ticketId) =>
         await DbSet.Include(r => r.Responder)

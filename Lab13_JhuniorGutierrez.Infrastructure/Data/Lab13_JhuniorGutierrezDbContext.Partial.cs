@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Lab13_JhuniorGutierrez.Infrastructure.Data;
 
-public partial class Lab13_JhuniorGutierrezDbContext
+public partial class Lab13JhuniorGutierrezDbContext
 {
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder)
     {

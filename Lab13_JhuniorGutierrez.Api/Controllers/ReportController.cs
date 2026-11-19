@@ -18,9 +18,9 @@ public class ReportController : ControllerBase
     [Produces(ExcelFileDto.ContentType)]
     [ProducesResponseType(typeof(FileContentResult), StatusCodes.Status200OK)]
     public async Task<IActionResult> ExportTickets([FromQuery] TicketStatus? status,
-        [FromServices] ExportTicketsReportUseCase useCase)
+        [FromServices] ExportTicketsReportQuery query)
     {
-        var file = await useCase.ExecuteAsync(User.ToCurrentUser(), status);
+        var file = await query.ExecuteAsync(User.ToCurrentUser(), status);
         return File(file.Content, ExcelFileDto.ContentType, file.FileName);
     }
     
@@ -29,9 +29,9 @@ public class ReportController : ControllerBase
     [Produces(ExcelFileDto.ContentType)]
     [ProducesResponseType(typeof(FileContentResult), StatusCodes.Status200OK)]
     [ProducesResponseType<ProblemDetails>(StatusCodes.Status403Forbidden)]
-    public async Task<IActionResult> ExportUsers([FromServices] ExportUsersReportUseCase useCase)
+    public async Task<IActionResult> ExportUsers([FromServices] ExportUsersReportQuery query)
     {
-        var file = await useCase.ExecuteAsync();
+        var file = await query.ExecuteAsync();
         return File(file.Content, ExcelFileDto.ContentType, file.FileName);
     }
 }
