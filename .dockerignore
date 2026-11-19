@@ -1,0 +1,12 @@
+﻿
+**/bin/
+**/obj/
+**/.idea/
+**/.vs/
+.git/
+.github/
+publish/
+**/publish/
+**/*.user
+**/*.DotSettings.user
+**/secrets.json
